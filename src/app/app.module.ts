@@ -2,15 +2,27 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
+import { AngularYandexMapsModule, YaConfig } from 'angular8-yandex-maps';
+import { EMAIL_SENDER } from './injection-tokens/injection-tokens';
+import { MailerSendService } from './services/mailer-send.service';
+
+const mapConfig: YaConfig = {
+  apikey: 'API_KEY',
+  lang: 'ru_RU',
+};
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AngularYandexMapsModule.forRoot(mapConfig)
   ],
-  providers: [],
+  providers: [
+    {provide: EMAIL_SENDER, useClass: MailerSendService}
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

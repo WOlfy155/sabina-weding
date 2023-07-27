@@ -1,0 +1,33 @@
+:host {
+  display: flex;
+  flex-direction: column;
+}
+
+.block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  height: 100vh;
+  height: 100svh;
+
+  -webkit-transition: transform 2s, opacity 3s;
+  transition: transform 2s, opacity 4s;
+
+  opacity: 0;
+  -webkit-transform: translateY(150px);
+  transform: translateY(150px);
+
+  &.appear {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+.map {
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+}
