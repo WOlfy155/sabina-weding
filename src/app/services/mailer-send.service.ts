@@ -20,7 +20,7 @@ export interface EmailRequest {
 @Injectable()
 export class MailerSendService implements IEmailSender {
 
-  private http = inject(HttpClient);
+  private http = inject(HttpClient, {optional: true});
 
   send$(text: string): Observable<any> {
 
@@ -31,7 +31,8 @@ export class MailerSendService implements IEmailSender {
 
     const emailRequest = this.createEmailRequest(text)
 
-    return this.http.post('https://api.mailersend.com/v1/email', emailRequest, {
+    // @ts-ignore
+    return this.http?.post?.('https://api.mailersend.com/v1/email', emailRequest, {
       headers
     });
   }
