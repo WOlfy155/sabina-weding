@@ -1,11 +1,15 @@
 import { Component, ElementRef, inject, QueryList, ViewChildren } from '@angular/core';
 import { EMAIL_SENDER } from './injection-tokens/injection-tokens';
 import { take } from 'rxjs';
+import { MailerSendService } from './services/mailer-send.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  providers: [
+    {provide: EMAIL_SENDER, useClass: MailerSendService}
+  ]
 })
 export class AppComponent {
 

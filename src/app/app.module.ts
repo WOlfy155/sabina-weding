@@ -20,7 +20,6 @@ const mapConfig: YaConfig = {
     AngularYandexMapsModule.forRoot(mapConfig)
   ],
   providers: [
-    {provide: EMAIL_SENDER, useClass: MailerSendService}
   ],
   bootstrap: [AppComponent]
 })
