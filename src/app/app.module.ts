@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { AngularYandexMapsModule, YaConfig } from 'angular8-yandex-maps';
 import { EMAIL_SENDER } from './injection-tokens/injection-tokens';
 import { MailerSendService } from './services/mailer-send.service';
+import { HttpClientModule } from '@angular/common/http';
 
 const mapConfig: YaConfig = {
   apikey: 'API_KEY',
@@ -17,6 +18,7 @@ const mapConfig: YaConfig = {
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AngularYandexMapsModule.forRoot(mapConfig)
   ],
   providers: [
