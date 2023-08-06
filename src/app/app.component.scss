@@ -1,6 +1,12 @@
+$main-mustard: #9f8935;
+$secondary-text: #765830;
+$main-text: #B48B58;
+
 :host {
   display: flex;
   flex-direction: column;
+  background: url("../assets/images/sabina-3.jpeg");
+  background-position: center;
 }
 
 .block {
@@ -8,6 +14,7 @@
   justify-content: center;
   align-items: center;
   text-align: center;
+  position: relative;
 
   height: 100vh;
   height: 100svh;
@@ -27,7 +34,151 @@
 }
 
 .map {
-  width: 300px;
-  height: 300px;
+  width: 100%;
+  height: 60%;
   overflow: hidden;
+}
+
+.image-circle{
+  position: absolute;
+
+  img{
+    width: 150px;
+  }
+
+  &.circle1 {
+    margin-right: 20px;
+    right: 70%;
+    top: 0;
+  }
+
+  &.circle2 {
+    margin-left: 20px;
+    left: 70%;
+    top: 33%;
+  }
+
+  &.circle3 {
+    margin-right: 20px;
+    right: 70%;
+    top: 66%;
+  }
+
+}
+
+
+.center-line{
+  position: absolute;
+  height: 70%;
+  width: 2px;
+  left: 50%;
+  display: flex;
+  justify-content: center;
+  background: $main-mustard;
+}
+
+.start-dot {
+  position: absolute;
+  top: 0;
+  width: 8px;
+  height: 8px;
+  display: block;
+  transform: rotate(45deg);
+  background: $main-mustard;
+}
+
+.center-line-dot{
+  position: absolute;
+
+  width: 1rem;
+  height: 1rem;
+
+  border-radius: 50%;
+  display: block;
+
+  background: $main-mustard;
+
+  &.dot1 {
+    top: 25%;
+  }
+
+  &.dot2 {
+    top: 50%;
+  }
+
+  &.dot3 {
+    top: 75%;
+  }
+
+  &.dot4 {
+    top: 100%;
+  }
+
+}
+
+.welcome-block{
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+  align-self: center;
+
+  width: 100%;
+  height: 60%;
+
+  gap: 10px;
+
+  .title {
+    font-size: 5rem;
+  }
+
+  .invitation {
+    color: $secondary-text;
+    font-size: 22px;
+  }
+
+  .date {
+    font-size: 1rem;
+    color: $secondary-text;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &.month {
+      margin: 20px 0 10px 0;
+    }
+
+    &.bordered {
+      border-top: 1px solid $main-text;
+      border-bottom: 1px solid $main-text;
+      height: 60px;
+      width: 40%;
+    }
+
+    &.day {
+      font-size: 3.3rem;
+      width: 8rem;
+    }
+  }
+
+  .date-block {
+    display: flex;
+    width: 80%;
+    justify-content: space-evenly;
+    align-self: center;
+  }
+
+  .year {
+    margin-top: 2rem;
+    font-size: 4rem;
+    color: $main-text;
+  }
+
+}
+
+.flower-top{
+  position: absolute;
+  width: 33rem;
+  left: -160px;
+  top: -290px;
+  z-index: 10;
 }
